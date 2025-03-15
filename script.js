@@ -70,6 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
     L: {
       name: "L - soft, weiß, pink, grau, blau",
       colors: ["soft", "weiß", "pink", "grau", "blau"],
+    },
+    M: {
+      name: "M - soft, weiß, pink, grau, blau",
+      colors: ["soft", "weiß", "pink", "grau", "blau"],
     }
   };
 
