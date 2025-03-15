@@ -69,13 +69,29 @@ document.addEventListener("DOMContentLoaded", () => {
         colors: ["braun", "weinrot", "schwarz", "grau", "weiß", "soft"],
       },
       L: {
-        name: "L - soft, weiß, pink, grau, ",
-        colors: ["soft", "weiß", "pink", "grau"],
+        name: "L - beige, weiß, rosa",
+        colors: ["soft", "weiß", "pink"],
       },
       M: {
         name: "M - soft, weiß, pink, grau, blau",
         colors: ["soft", "weiß", "pink", "grau", "blau"],
       },
+      N: {
+        name: "N - beige, weiß, braun, schwarz",
+        colors: ["soft", "weiß", "braun", "schwarz"],
+      },
+      O: {
+        name: "O - weiß, orange, blau, schwarz, weinrot",
+        colors: ["weiß", "orange", "blau", "schwarz", "weinrot"],
+      },
+      P: {
+        name: "P - grau, pink, soft, weiß, schwarz, braun, weinrot",
+        colors: ["grau", "pink", "soft", "weiß", "schwarz", "braun", "weinrot"],
+      },
+      Q: {
+        name: "Q - soft, weiß, pink, braun, schwarz, weinrot",
+        colors: ["soft", "weiß", "pink", "braun", "schwarz", "weinrot"],
+      },             
     };
   
     // Funktion zum Aktualisieren des Copy-Buttons
