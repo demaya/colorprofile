@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
         colors: ["braun", "weinrot", "schwarz", "grau", "weiß", "soft"],
       },
       L: {
-        name: "L - soft, weiß, pink, grau, blau",
-        colors: ["soft", "weiß", "pink", "grau", "blau"],
+        name: "L - soft, weiß, pink, grau, ",
+        colors: ["soft", "weiß", "pink", "grau"],
       },
       M: {
         name: "M - soft, weiß, pink, grau, blau",
