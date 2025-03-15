@@ -1,87 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farbprofil-Auswahl</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Farbprofil-Auswahl</h1>
+      <h1>Farbprofil-Auswahl</h1>
+
+      <div class="colors-container">
+        <div class="button-container">
+            <button id="resetButton" class="reset-button">Alle Farben zurücksetzen</button>
+            <button id="copyButton" class="copy-button" disabled>Profilname kopieren</button>
+        </div>
         
-        <div class="colors-container">
-            <div class="color-category light-colors">
-                <h3>Helle & Bunte Farben</h3>
-                <div class="color-group">
-                    <label class="color-option">
-                        <input type="checkbox" value="athleticHeather" class="color-checkbox"> 
-                        <span class="color-box athletic-heather"></span>
-                        <span class="color-name">Athletic Heather</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="orange" class="color-checkbox"> 
-                        <span class="color-box orange"></span>
-                        <span class="color-name">Orange</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="pink" class="color-checkbox"> 
-                        <span class="color-box pink"></span>
-                        <span class="color-name">Pink</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="royalBlue" class="color-checkbox"> 
-                        <span class="color-box royal-blue"></span>
-                        <span class="color-name">Blau</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="softCream" class="color-checkbox"> 
-                        <span class="color-box soft-cream"></span>
-                        <span class="color-name">Soft Cream</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="white" class="color-checkbox"> 
-                        <span class="color-box white"></span>
-                        <span class="color-name">Weiß</span>
-                    </label>
-                </div>
-            </div>
+        <div class="color-category light-colors">
+          <h3>Helle & Bunte Farben</h3>
+          <div class="color-group">
+            <label class="color-option">
+              <input type="checkbox" value="athleticHeather" class="color-checkbox" />
+              <span class="color-box athletic-heather"></span>
+              <span class="color-name">Athletic Heather</span>
+            </label>
 
-            <div class="color-category dark-colors">
-                <h3>Dunkle Farben</h3>
-                <div class="color-group">
-                    <label class="color-option">
-                        <input type="checkbox" value="black" class="color-checkbox"> 
-                        <span class="color-box black"></span>
-                        <span class="color-name">Schwarz</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="brown" class="color-checkbox"> 
-                        <span class="color-box brown"></span>
-                        <span class="color-name">Braun</span>
-                    </label>
-                    
-                    <label class="color-option">
-                        <input type="checkbox" value="maroon" class="color-checkbox"> 
-                        <span class="color-box maroon"></span>
-                        <span class="color-name">Weinrot</span>
-                    </label>
-                </div>
-            </div>
+            <label class="color-option">
+              <input type="checkbox" value="orange" class="color-checkbox" />
+              <span class="color-box orange"></span>
+              <span class="color-name">Orange</span>
+            </label>
+
+            <label class="color-option">
+              <input type="checkbox" value="pink" class="color-checkbox" />
+              <span class="color-box pink"></span>
+              <span class="color-name">Pink</span>
+            </label>
+
+            <label class="color-option">
+              <input type="checkbox" value="royalBlue" class="color-checkbox" />
+              <span class="color-box royal-blue"></span>
+              <span class="color-name">Blau</span>
+            </label>
+
+            <label class="color-option">
+              <input type="checkbox" value="softCream" class="color-checkbox" />
+              <span class="color-box soft-cream"></span>
+              <span class="color-name">Soft Cream</span>
+            </label>
+
+            <label class="color-option">
+              <input type="checkbox" value="white" class="color-checkbox" />
+              <span class="color-box white"></span>
+              <span class="color-name">Weiß</span>
+            </label>
+          </div>
         </div>
 
-        <div id="result" class="result">
-            <h2>Ergebnis:</h2>
-            <div id="profileResult"></div>
+        <div class="color-category dark-colors">
+          <h3>Dunkle Farben</h3>
+          <div class="color-group">
+            <label class="color-option">
+              <input type="checkbox" value="black" class="color-checkbox" />
+              <span class="color-box black"></span>
+              <span class="color-name">Schwarz</span>
+            </label>
+
+            <label class="color-option">
+              <input type="checkbox" value="brown" class="color-checkbox" />
+              <span class="color-box brown"></span>
+              <span class="color-name">Braun</span>
+            </label>
+
+            <label class="color-option">
+              <input type="checkbox" value="maroon" class="color-checkbox" />
+              <span class="color-box maroon"></span>
+              <span class="color-name">Weinrot</span>
+            </label>
+          </div>
         </div>
+      </div>
+
+      <div id="result" class="result">
+        <h2>Ergebnis:</h2>
+        <div id="profileResult"></div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
