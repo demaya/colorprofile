@@ -161,3 +161,35 @@ input[type="checkbox"] {
     padding-bottom: 0;
 }
 
+/* Styling für den Farbzähler */
+.color-counter {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #f0f8ff;
+    border-radius: 6px;
+    border-left: 4px solid #2196F3;
+    font-size: 16px;
+    margin: 20px 0;
+    text-align: right;
+}
+
+.counter-text {
+    font-weight: 500;
+    color: #444;
+}
+
+.counter-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.counter-total {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Hervorhebung für Zähler, der einem Profil entspricht */
+.counter-match {
+    color: #4CAF50;
+}

@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const profileResult = document.getElementById('profileResult');
     const colorCheckboxes = document.querySelectorAll('.color-checkbox');
+    
+    // Erstelle das Farbzähler-Element
+    const colorCounter = document.createElement('div');
+    colorCounter.className = 'color-counter';
+    // Füge es nach der dark-colors Kategorie ein
+    document.querySelector('.dark-colors').after(colorCounter);
 
     // Farbzuordnungen
     const colorMapping = {
@@ -62,6 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
             colors: ['braun', 'weinrot', 'schwarz', 'grau', 'weiß', 'soft']
         }
     };
+
+    // Funktion zur Aktualisierung des Farbzählers
+    function updateColorCounter() {
+        const selectedCount = document.querySelectorAll('.color-checkbox:checked').length;
+        const totalCount = colorCheckboxes.length;
+        
+        // Prüfe, ob die Anzahl der ausgewählten Farben mit einem Profil übereinstimmt
+        const profileCounts = new Set();
+        for (const profile of Object.values(profiles)) {
+            profileCounts.add(profile.colors.length);
+        }
+        
+        const counterClass = profileCounts.has(selectedCount) ? 'counter-match' : '';
+        
+        colorCounter.innerHTML = `
+            <span class="counter-text">
+                <span class="counter-number ${counterClass}">${selectedCount}</span>/<span class="counter-total">${totalCount}</span> Farben ausgewählt
+            </span>
+        `;
+    }
 
     // Funktion zur Überprüfung der Profile
     function checkProfiles() {
@@ -125,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         profileResult.innerHTML = resultHTML;
+        
+        // Aktualisiere den Farbzähler
+        updateColorCounter();
     }
 
     // Jede Checkbox mit einem Event-Listener versehen
@@ -134,4 +163,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial ausführen
     checkProfiles();
+    updateColorCounter();
 });
