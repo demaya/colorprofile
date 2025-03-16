@@ -157,15 +157,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reset-Button Funktionalität
     const resetButton = document.getElementById("resetButton");
     resetButton.addEventListener("click", function () {
-      // Alle Checkboxen abwählen
-      colorCheckboxes.forEach((checkbox) => {
-        checkbox.checked = false;
-      });
+        // Alle Checkboxen abwählen
+        colorCheckboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+        });
+
+        // Dropdown zurücksetzen
+        profileSelect.value = "";
   
-      // Profile neu prüfen, Counter aktualisieren und Copy-Button deaktivieren
-      checkProfiles();
-      updateColorCounter();
-      updateCopyButton([]); // Button explizit deaktivieren
+        // Profile neu prüfen, Counter aktualisieren und Copy-Button deaktivieren
+        checkProfiles();
+        updateColorCounter();
+        updateCopyButton([]); // Button explizit deaktivieren
     });
   
     // Funktion zur Überprüfung der Profile
@@ -238,6 +241,44 @@ document.addEventListener("DOMContentLoaded", () => {
       // Aktualisiere den Farbzähler
       updateColorCounter();
     }
+  
+    // Dropdown-Menü mit Profilen füllen
+    const profileSelect = document.getElementById("profileSelect");
+    
+    // Profile alphabetisch sortieren und ins Dropdown einfügen
+    Object.entries(profiles)
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .forEach(([profileId, profile]) => {
+            const option = document.createElement("option");
+            option.value = profileId;
+            option.textContent = `${profileId} - ${profile.name}`;
+            profileSelect.appendChild(option);
+        });
+
+    // Event-Listener für Profilauswahl
+    profileSelect.addEventListener("change", function() {
+        // Alle Checkboxen zurücksetzen
+        colorCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        const selectedProfileId = this.value;
+        if (selectedProfileId) {
+            const selectedProfile = profiles[selectedProfileId];
+            
+            // Checkboxen entsprechend dem gewählten Profil setzen
+            colorCheckboxes.forEach(checkbox => {
+                const colorName = colorMapping[checkbox.value];
+                if (selectedProfile.colors.includes(colorName)) {
+                    checkbox.checked = true;
+                }
+            });
+        }
+
+        // Profile neu prüfen und Counter aktualisieren
+        checkProfiles();
+        updateColorCounter();
+    });
   
     // Jede Checkbox mit einem Event-Listener versehen
     colorCheckboxes.forEach((checkbox) => {
