@@ -91,6 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
       Q: {
         name: "Q - soft, weiß, pink, braun, schwarz, weinrot",
         colors: ["soft", "weiß", "pink", "braun", "schwarz", "weinrot"],
+      },
+      R: {
+        name: "R - grau, orange, pink, blau, soft, weiß, weinrot",
+        colors: ["grau", "orange", "pink", "blau", "soft", "weiß", "weinrot"],
       },             
     };
   
