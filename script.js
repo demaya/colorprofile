@@ -95,7 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
       R: {
         name: "R - grau, orange, pink, blau, soft, weiß, weinrot",
         colors: ["grau", "orange", "pink", "blau", "soft", "weiß", "weinrot"],
-      },             
+      },      
+      S: {
+        name: "S - weiß, orange, blau, soft, schwarz, weinrot, braun",
+        colors: ["weiß", "orange", "blau", "soft", "schwarz", "weinrot", "braun"]
+      }      
     };
   
     // Funktion zum Aktualisieren des Copy-Buttons
