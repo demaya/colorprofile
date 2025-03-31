@@ -283,3 +283,37 @@ input[type="checkbox"] {
     outline: none;
     border-color: #2196F3;
 }
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.category-header h3 {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.toggle-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #90caf9;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    background-color: #e3f2fd;
+}
+
+.toggle-btn:hover {
+    background-color: #bbdefb;
+}
+
+.toggle-btn.active {
+    background-color: #2196F3;
+    color: white;
+}

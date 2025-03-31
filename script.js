@@ -22,85 +22,37 @@ document.addEventListener("DOMContentLoaded", () => {
       white: "weiß",
     };
   
-    // Profile mit ihren Farbregeln
+    // Profile mit nur den Farben
     const profiles = {
-      A: {
-        name: "A - alle Farben",
-        colors: ["grau", "pink", "orange", "blau", "soft", "schwarz", "weinrot", "braun", "weiß"],
-      },
-      B: {
-        name: "B - weiß, pink, orange, grau, blau, soft",
-        colors: ["weiß", "pink", "orange", "grau", "blau", "soft"],
-      },
-      C: {
-        name: "C - pink, weiß, grau, soft",
-        colors: ["pink", "weiß", "grau", "soft"],
-      },
-      D: {
-        name: "D - grau, pink, orange, blau",
-        colors: ["grau", "pink", "orange", "blau"],
-      },
-      E: {
-        name: "E - orange, weiß, blau, grau, soft, schwarz, weinrot, braun",
-        colors: ["orange", "weiß", "blau", "grau", "soft", "schwarz", "weinrot", "braun"],
-      },
-      F: {
-        name: "F - weiß, schwarz, pink, weinrot, grau, braun, blau, soft",
-        colors: ["weiß", "schwarz", "pink", "weinrot", "grau", "braun", "blau", "soft"],
-      },
-      G: {
-        name: "G - pink, orange, weiß, grau, soft",
-        colors: ["pink", "orange", "weiß", "grau", "soft"],
-      },
-      H: {
-        name: "H - weiß, orange, weinrot, schwarz, braun, blau",
-        colors: ["weiß", "orange", "weinrot", "schwarz", "braun", "blau"],
-      },
-      I: {
-        name: "I - orange, weinrot, schwarz, braun, blau",
-        colors: ["orange", "weinrot", "schwarz", "braun", "blau"],
-      },
-      J: {
-        name: "J - pink, orange, blau, grau, schwarz, weinrot, braun",
-        colors: ["pink", "orange", "blau", "grau", "schwarz", "weinrot", "braun"],
-      },
-      K: {
-        name: "K - braun, weinrot, schwarz, grau, weiß, soft",
-        colors: ["braun", "weinrot", "schwarz", "grau", "weiß", "soft"],
-      },
-      L: {
-        name: "L - beige, weiß, rosa",
-        colors: ["soft", "weiß", "pink"],
-      },
-      M: {
-        name: "M - soft, weiß, pink, grau, blau",
-        colors: ["soft", "weiß", "pink", "grau", "blau"],
-      },
-      N: {
-        name: "N - beige, weiß, braun, schwarz",
-        colors: ["soft", "weiß", "braun", "schwarz"],
-      },
-      O: {
-        name: "O - weiß, orange, blau, schwarz, weinrot",
-        colors: ["weiß", "orange", "blau", "schwarz", "weinrot"],
-      },
-      P: {
-        name: "P - grau, pink, soft, weiß, schwarz, braun, weinrot",
-        colors: ["grau", "pink", "soft", "weiß", "schwarz", "braun", "weinrot"],
-      },
-      Q: {
-        name: "Q - soft, weiß, pink, braun, schwarz, weinrot",
-        colors: ["soft", "weiß", "pink", "braun", "schwarz", "weinrot"],
-      },
-      R: {
-        name: "R - grau, orange, pink, blau, soft, weiß, weinrot",
-        colors: ["grau", "orange", "pink", "blau", "soft", "weiß", "weinrot"],
-      },      
-      S: {
-        name: "S - weiß, orange, blau, soft, schwarz, weinrot, braun",
-        colors: ["weiß", "orange", "blau", "soft", "schwarz", "weinrot", "braun"]
-      }      
+      A: ["grau", "pink", "orange", "blau", "soft", "schwarz", "weinrot", "braun", "weiß"],
+      B: ["weiß", "pink", "orange", "grau", "blau", "soft"],
+      C: ["pink", "weiß", "grau", "soft"],
+      D: ["grau", "pink", "orange", "blau"],
+      E: ["orange", "weiß", "blau", "grau", "soft", "schwarz", "weinrot", "braun"],
+      F: ["weiß", "schwarz", "pink", "weinrot", "grau", "braun", "blau", "soft"],
+      G: ["pink", "orange", "weiß", "grau", "soft"],
+      H: ["weiß", "orange", "weinrot", "schwarz", "braun", "blau"],
+      I: ["orange", "weinrot", "schwarz", "braun", "blau"],
+      J: ["pink", "orange", "blau", "grau", "schwarz", "weinrot", "braun"],
+      K: ["braun", "weinrot", "schwarz", "grau", "weiß", "soft"],
+      L: ["soft", "weiß", "pink"],
+      M: ["soft", "weiß", "pink", "grau", "blau"],
+      N: ["soft", "weiß", "braun", "schwarz"],
+      O: ["weiß", "orange", "blau", "schwarz", "weinrot"],
+      P: ["grau", "pink", "soft", "weiß", "schwarz", "braun", "weinrot"],
+      Q: ["soft", "weiß", "pink", "braun", "schwarz", "weinrot"],
+      R: ["grau", "orange", "pink", "blau", "soft", "weiß", "weinrot"],
+      S: ["weiß", "orange", "blau", "soft", "schwarz", "weinrot", "braun"],
+      T: ["grau", "weiß", "pink", "soft", "braun", "schwarz", "orange"],
+      U: ["weiß", "grau", "soft", "blau"],
+      V: ["weiß", "grau", "pink", "blau", "soft", "schwarz", "braun"],
+      W: ["weiß", "soft", "grau", "pink", "braun", "schwarz"]
     };
+  
+    // Funktion zum Generieren des Profilnamens
+    function getProfileName(profileId, colors) {
+      return `${profileId} - ${colors.join(", ")}`;
+    }
   
     // Funktion zum Aktualisieren des Copy-Buttons
     function updateCopyButton(matchedProfiles) {
@@ -108,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         copyButton.disabled = false;
         
         // Setze das aktuelle Profil für den Copy-Button
-        copyButton.dataset.profileName = `[${matchedProfiles[0].id}] - ${matchedProfiles[0].colors.join(", ")}`;
+        copyButton.dataset.profileName = getProfileName(matchedProfiles[0].id, matchedProfiles[0].colors);
         console.log("Button aktiviert für:", copyButton.dataset.profileName);
       } else {
         copyButton.disabled = true;
@@ -150,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Prüfe, ob die Anzahl der ausgewählten Farben mit einem Profil übereinstimmt
       const profileCounts = new Set();
       for (const profile of Object.values(profiles)) {
-        profileCounts.add(profile.colors.length);
+        profileCounts.add(profile.length);
       }
   
       const counterClass = (selectedCount > 0 && profileCounts.has(selectedCount)) ? "counter-match" : "";
@@ -196,19 +148,19 @@ document.addEventListener("DOMContentLoaded", () => {
       // Finde 100% passende Profile
       const exactMatchProfiles = [];
   
-      for (const [profileId, profile] of Object.entries(profiles)) {
+      for (const [profileId, profileColors] of Object.entries(profiles)) {
         // Prüfen, ob alle ausgewählten Farben im Profil enthalten sind
-        const allColorsInProfile = selectedColors.every((color) => profile.colors.includes(color));
+        const allColorsInProfile = selectedColors.every((color) => profileColors.includes(color));
         
         // Prüfen, ob alle Profilfarben ausgewählt wurden
-        const allProfileColorsSelected = profile.colors.every((color) => selectedColors.includes(color));
+        const allProfileColorsSelected = profileColors.every((color) => selectedColors.includes(color));
         
         // Nur wenn beides zutrifft, handelt es sich um eine 100% Übereinstimmung
         if (allColorsInProfile && allProfileColorsSelected) {
           exactMatchProfiles.push({
             id: profileId,
-            name: profile.name,
-            colors: profile.colors,
+            name: getProfileName(profileId, profileColors),
+            colors: profileColors,
           });
         }
       }
@@ -256,10 +208,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Profile alphabetisch sortieren und ins Dropdown einfügen
     Object.entries(profiles)
         .sort((a, b) => a[0].localeCompare(b[0]))
-        .forEach(([profileId, profile]) => {
+        .forEach(([profileId, profileColors]) => {
             const option = document.createElement("option");
             option.value = profileId;
-            option.textContent = `${profileId} - ${profile.name}`;
+            option.textContent = getProfileName(profileId, profileColors);
             profileSelect.appendChild(option);
         });
 
@@ -272,12 +224,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const selectedProfileId = this.value;
         if (selectedProfileId) {
-            const selectedProfile = profiles[selectedProfileId];
+            const selectedProfileColors = profiles[selectedProfileId];
             
             // Checkboxen entsprechend dem gewählten Profil setzen
             colorCheckboxes.forEach(checkbox => {
                 const colorName = colorMapping[checkbox.value];
-                if (selectedProfile.colors.includes(colorName)) {
+                if (selectedProfileColors.includes(colorName)) {
                     checkbox.checked = true;
                 }
             });
@@ -292,6 +244,36 @@ document.addEventListener("DOMContentLoaded", () => {
     colorCheckboxes.forEach((checkbox) => {
       checkbox.addEventListener("change", checkProfiles);
     });
+  
+    // Funktion für die Kategorie-Buttons
+    function setupCategoryButtons() {
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.dataset.category;
+                const container = category === 'light' ? 
+                    document.querySelector('.light-colors') : 
+                    document.querySelector('.dark-colors');
+                
+                const checkboxes = container.querySelectorAll('.color-checkbox');
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                
+                // Toggle Zustand
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = !allChecked;
+                });
+                
+                // Button Text und Stil aktualisieren
+                this.textContent = allChecked ? 'Alle auswählen' : 'Alle abwählen';
+                this.classList.toggle('active', !allChecked);
+                
+                checkProfiles();
+                updateColorCounter();
+            });
+        });
+    }
+
+    // Initialisiere die Kategorie-Buttons
+    setupCategoryButtons();
   
     // Initial ausführen
     checkProfiles();
