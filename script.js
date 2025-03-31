@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Funktion zum Generieren des Profilnamens
     function getProfileName(profileId, colors) {
-      return `${profileId} - ${colors.join(", ")}`;
+      return `[${profileId}] - ${colors.join(", ")}`;
     }
   
     // Funktion zum Aktualisieren des Copy-Buttons
