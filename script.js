@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       W: ["weiß", "soft", "grau", "pink", "braun", "schwarz"]
     };
 
-    // Funktion zum Generieren des Profilnamens
+    // Funktion zum Generieren des Profilnamen
     function getProfileName(profileId, colors) {
       return `[${profileId}] - ${colors.join(", ")}`;
     }
