@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       V: ["weiß", "grau", "pink", "blau", "soft", "schwarz", "braun"],
       W: ["weiß", "soft", "grau", "pink", "braun", "schwarz"]
     };
+    
   
     // Funktion zum Generieren des Profilnamens
     function getProfileName(profileId, colors) {
