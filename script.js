@@ -46,7 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
       T: ["grau", "weiß", "pink", "soft", "braun", "schwarz", "orange"],
       U: ["weiß", "grau", "soft", "blau"],
       V: ["weiß", "grau", "pink", "blau", "soft", "schwarz", "braun"],
-      W: ["weiß", "soft", "grau", "pink", "braun", "schwarz"]
+      W: ["weiß", "soft", "grau", "pink", "braun", "schwarz"],
+      X: ["pink", "grau", "weiß", "orange", "blau"],
+      Y: ["soft", "pink", "grau", "blau", "braun", "schwarz"],
+      Z: ["soft", "weiß", "braun", "schwarz"],
+      1: ["soft", "grau", "pink"],
+      2: ["soft", "grau", "weiß"]
     };
 
     // Funktion zum Generieren des Profilnamen
